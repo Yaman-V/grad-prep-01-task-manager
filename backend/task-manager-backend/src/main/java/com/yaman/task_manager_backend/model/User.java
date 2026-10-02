@@ -1,9 +1,10 @@
 package com.yaman.task_manager_backend.model;
+
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Users")
-public class Users {
+@Table(name = "User")
+public class User {
 
     @Id
     private String email;
