@@ -12,7 +12,7 @@ public class Project {
 
     @ManyToOne
     @JoinColumn (name = "admin", nullable = false)
-    private User admin;
+    private Users admin;
 
     @Column (
         name = "title",

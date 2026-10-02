@@ -20,7 +20,7 @@ public class ProjectMember {
 
     @ManyToOne 
     @JoinColumn (name = "email", nullable = false)
-    private User user;
+    private Users user;
 
     @Column(
         name = "pinned",
