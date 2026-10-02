@@ -1,7 +1,7 @@
 package com.yaman.task_manager_backend.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.yaman.task_manager_backend.model.User;
+import com.yaman.task_manager_backend.model.Users;
 
-public interface UserRepo extends JpaRepository<User, String> {
+public interface UsersRepo extends JpaRepository<Users, String> {
     
 }
