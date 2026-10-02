@@ -1,3 +1,4 @@
+package com.yaman.task_manager_backend.model;
 import jakarta.persistence.*;
 
 @Entity 
