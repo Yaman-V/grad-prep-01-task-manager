@@ -32,4 +32,14 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
     }
+
+    @ExceptionHandler(InvalidSignIn.class)
+    public ResponseEntity<Map<String, String>> handleInvalidSignIn(InvalidSignIn ex) {
+
+        Map<String, String> error = new HashMap<>();
+
+        error.put("message", ex.getMessage());
+
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
+    }
 }

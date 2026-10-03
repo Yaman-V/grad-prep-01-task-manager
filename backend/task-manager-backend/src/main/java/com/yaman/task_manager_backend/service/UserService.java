@@ -1,7 +1,9 @@
 package com.yaman.task_manager_backend.service;
 
-import com.yaman.task_manager_backend.dto.UserRequestDTO;
+import com.yaman.task_manager_backend.dto.UserSignInRequestDTO;
 import com.yaman.task_manager_backend.dto.UserResponseDTO;
+import com.yaman.task_manager_backend.dto.UserSignUpRequestDTO;
+import com.yaman.task_manager_backend.exception.InvalidSignIn;
 import com.yaman.task_manager_backend.exception.UserAlreadyExistsException;
 import com.yaman.task_manager_backend.mapper.UserMapper;
 import com.yaman.task_manager_backend.model.User;
@@ -18,7 +20,7 @@ public class UserService {
         this.mapper = userMapper;
     }
 
-    public UserResponseDTO signUp(UserRequestDTO requestDTO) {
+    public UserResponseDTO signUp(UserSignUpRequestDTO requestDTO) {
         User newUser = mapper.toUser(requestDTO);
         if (userRepo.existsById(newUser.getEmail())) {
             throw new UserAlreadyExistsException("User Already Exists!");
@@ -26,6 +28,18 @@ public class UserService {
 
         User saved = userRepo.save(newUser);
         return mapper.toUserResponseDTO(saved);
+    }
+
+    public UserResponseDTO signIn(UserSignInRequestDTO requestDTO) {
+        if (!userRepo.existsById(requestDTO.email())) {
+            throw new InvalidSignIn();
+        }
+
+        User result = userRepo.getReferenceById(requestDTO.email());
+        if (result.getPassword().equals(requestDTO.password())) {
+            return mapper.toUserResponseDTO(result);
+        }
+        throw new InvalidSignIn();
     }
 
 }
