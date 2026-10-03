@@ -2,6 +2,7 @@ package com.yaman.task_manager_backend.service;
 
 import com.yaman.task_manager_backend.dto.UserRequestDTO;
 import com.yaman.task_manager_backend.dto.UserResponseDTO;
+import com.yaman.task_manager_backend.exception.UserAlreadyExistsException;
 import com.yaman.task_manager_backend.mapper.UserMapper;
 import com.yaman.task_manager_backend.model.User;
 import com.yaman.task_manager_backend.repository.UserRepo;
@@ -20,7 +21,7 @@ public class UserService {
     public UserResponseDTO signUp(UserRequestDTO requestDTO) {
         User newUser = mapper.toUser(requestDTO);
         if (userRepo.existsById(newUser.getEmail())) {
-            throw new RuntimeException();
+            throw new UserAlreadyExistsException("User Already Exists!");
         }
 
         User saved = userRepo.save(newUser);
