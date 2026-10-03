@@ -1,7 +1,13 @@
 package com.yaman.task_manager_backend.model;
+
 import jakarta.persistence.*;
 import java.time.*;
+import lombok.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "Task")
 public class Task {
