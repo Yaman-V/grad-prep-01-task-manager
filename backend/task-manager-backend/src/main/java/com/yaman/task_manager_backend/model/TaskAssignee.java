@@ -1,7 +1,12 @@
 package com.yaman.task_manager_backend.model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "TaskAssignee", uniqueConstraints = {
         @UniqueConstraint(columnNames = { "taskId", "projectMemberId" })

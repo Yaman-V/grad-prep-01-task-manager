@@ -2,7 +2,12 @@ package com.yaman.task_manager_backend.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import lombok.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "Project")
 public class Project {
