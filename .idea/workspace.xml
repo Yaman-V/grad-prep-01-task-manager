@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a1db4f46-4ac3-42a6-a210-86c32d504320" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/task-manager-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/task-manager-backend/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="fix/fix-user-name" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Yaman-V&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Yaman-V/grad-prep-01-task-manager.git&quot;,
+    &quot;accountId&quot;: &quot;21c90406-ab9c-4a93-819a-08697d8eddb7&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.263479015579664" />
+      <entry key="MS500" value="3.61336063228843" />
+      <entry key="S2" value="10.879536010126186" />
+      <entry key="S5" value="20.47885997196517" />
+      <entry key="S10" value="29.479650775262378" />
+      <entry key="S30" value="42.430439439440406" />
+      <entry key="S60" value="49.24265994800089" />
+      <entry key="M2" value="57.13765804943997" />
+      <entry key="M5" value="77.77053956877303" />
+      <entry key="M10" value="111.90954848289326" />
+      <entry key="M15" value="138.8262608564604" />
+      <entry key="M30" value="187.28921211281823" />
+      <entry key="H1" value="231.9304465944914" />
+      <entry key="H2" value="267.20732032485586" />
+      <entry key="H4" value="290.7241473187475" />
+      <entry key="D1" value="314.6415977754386" />
+      <entry key="W1" value="319.2215698063028" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.1747220938058836E-79" />
+      <entry key="MS500" value="1.6367676295326882E-16" />
+      <entry key="S2" value="1.1310889427373062E-4" />
+      <entry key="S5" value="0.026387636986793167" />
+      <entry key="S10" value="0.1627729199455142" />
+      <entry key="S30" value="0.6148316818448405" />
+      <entry key="S60" value="1.0247170303723145" />
+      <entry key="M2" value="1.9133330011429055" />
+      <entry key="M5" value="6.36032139958937" />
+      <entry key="M10" value="12.898064776411324" />
+      <entry key="M15" value="17.233015617999847" />
+      <entry key="M30" value="25.06618413528184" />
+      <entry key="H1" value="33.889205182063215" />
+      <entry key="H2" value="42.15009412113555" />
+      <entry key="H4" value="48.142621215620494" />
+      <entry key="D1" value="54.53428248490065" />
+      <entry key="W1" value="55.78638151154379" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.1288289932227287" />
+      <entry key="MS500" value="3.5338489689061308" />
+      <entry key="S2" value="10.82528744024913" />
+      <entry key="S5" value="20.46046100372601" />
+      <entry key="S10" value="29.604042346966008" />
+      <entry key="S30" value="42.995466211728775" />
+      <entry key="S60" value="50.20203825548274" />
+      <entry key="M2" value="58.98296568757094" />
+      <entry key="M5" value="84.06370034588787" />
+      <entry key="M10" value="124.7485460890305" />
+      <entry key="M15" value="156.00817947418017" />
+      <entry key="M30" value="212.3192605081996" />
+      <entry key="H1" value="265.79615368248943" />
+      <entry key="H2" value="309.34331495171665" />
+      <entry key="H4" value="338.8588987015155" />
+      <entry key="D1" value="369.1744260158909" />
+      <entry key="W1" value="375.00773962001165" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3K8Y5qopnT54ycTxhBenUTYS52k" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/sign-up&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/Documents/Projects/grad-prep-01-task-manager&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="TaskManagerBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="task-manager-backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yaman.task_manager_backend.TaskManagerBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a1db4f46-4ac3-42a6-a210-86c32d504320" name="Changes" comment="" />
+      <created>1790940481332</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1790940481332</updated>
+      <workItem from="1790940482518" duration="6301000" />
+      <workItem from="1790957146647" duration="1580000" />
+      <workItem from="1790959734031" duration="125000" />
+      <workItem from="1790959938404" duration="1547000" />
+      <workItem from="1790961723297" duration="180000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
