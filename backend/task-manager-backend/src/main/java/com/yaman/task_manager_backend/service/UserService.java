@@ -8,16 +8,19 @@ import com.yaman.task_manager_backend.exception.UserAlreadyExistsException;
 import com.yaman.task_manager_backend.mapper.UserMapper;
 import com.yaman.task_manager_backend.model.User;
 import com.yaman.task_manager_backend.repository.UserRepo;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
     private final UserMapper mapper;
     private final UserRepo userRepo;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepo userRepo, UserMapper userMapper) {
+    public UserService(UserRepo userRepo, UserMapper userMapper, PasswordEncoder passwordEncoder) {
         this.userRepo = userRepo;
         this.mapper = userMapper;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public UserResponseDTO signUp(UserSignUpRequestDTO requestDTO) {
@@ -26,6 +29,7 @@ public class UserService {
             throw new UserAlreadyExistsException("User Already Exists!");
         }
 
+        newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
         User saved = userRepo.save(newUser);
         return mapper.toUserResponseDTO(saved);
     }
