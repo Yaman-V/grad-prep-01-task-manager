@@ -1,7 +1,8 @@
 package com.yaman.task_manager_backend.controller;
 
-import com.yaman.task_manager_backend.dto.UserRequestDTO;
+import com.yaman.task_manager_backend.dto.UserSignInRequestDTO;
 import com.yaman.task_manager_backend.dto.UserResponseDTO;
+import com.yaman.task_manager_backend.dto.UserSignUpRequestDTO;
 import com.yaman.task_manager_backend.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -18,8 +19,15 @@ public class UserController {
         this.service =service;
     }
 
+    // Crating a new account
     @PostMapping("/users/signup")
-    public ResponseEntity<UserResponseDTO> SignUp(@Valid @RequestBody UserRequestDTO dto){
+    public ResponseEntity<UserResponseDTO> SignUp(@Valid @RequestBody UserSignUpRequestDTO dto){
         return ResponseEntity.status(HttpStatus.CREATED).body(service.signUp(dto));
+    }
+
+    // Signing in and existing account
+    @PostMapping("/users/signin")
+    public ResponseEntity<UserResponseDTO> signIn(@Valid @RequestBody UserSignInRequestDTO dto){
+        return ResponseEntity.status(HttpStatus.OK ).body(service.signIn(dto));
     }
 }
