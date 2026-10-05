@@ -59,7 +59,7 @@ public class ProjectService {
         return mapper.toProjectResponseDTO(project);
     }
 
-    private Project requireMemberProject(String email, Integer projectID) {
+    public Project requireMemberProject(String email, Integer projectID) {
         return projectMemberRepo.findProjectIfMember(projectID, email)
                 .orElseThrow(ProjectNotFoundException::new);   // 404 for missing project and for non-member
     }

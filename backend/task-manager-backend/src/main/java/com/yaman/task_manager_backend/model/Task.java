@@ -12,7 +12,7 @@ import lombok.*;
 @Table(name = "Task")
 public class Task {
 
-    enum Status{
+    public enum Status{
         OPEN,
         IN_PROGRESS,
         CLOSED

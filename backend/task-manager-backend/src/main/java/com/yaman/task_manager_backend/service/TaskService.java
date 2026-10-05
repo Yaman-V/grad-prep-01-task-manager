@@ -1,0 +1,51 @@
+package com.yaman.task_manager_backend.service;
+
+import com.yaman.task_manager_backend.dto.TaskCreateRequestDTO;
+import com.yaman.task_manager_backend.dto.TaskResponseDTO;
+import com.yaman.task_manager_backend.exception.AccessDeniedException;
+import com.yaman.task_manager_backend.mapper.TaskMapper;
+import com.yaman.task_manager_backend.model.Project;
+import com.yaman.task_manager_backend.model.Task;
+import com.yaman.task_manager_backend.repository.TaskRepo;
+import com.yaman.task_manager_backend.repository.UserRepo;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+
+
+@Service
+public class TaskService {
+    final TaskRepo taskRepo;
+    final TaskMapper mapper;
+    final UserRepo userRepo;
+    final ProjectService projectService;
+
+
+    public TaskService(TaskRepo taskRepo,  TaskMapper mapper, UserRepo userRepo,ProjectService projectService) {
+        this.taskRepo = taskRepo;
+        this.mapper = mapper;
+        this.userRepo = userRepo;
+        this.projectService = projectService;
+    }
+
+    public TaskResponseDTO createTask(String email , Integer projectID , TaskCreateRequestDTO requestDTO){
+        Project project =  requireAdmin(email,projectID);
+
+        Task task = new Task();
+        task.setProject(project);
+        task.setTitle(requestDTO.title());
+        task.setDescription(requestDTO.description());
+        task.setDueDate(requestDTO.dueDate());
+        task.setCreatedAt(LocalDateTime.now());
+
+        Task saved = taskRepo.save(task);
+        return mapper.taskResponseDTO(saved);
+    }
+
+    private Project requireAdmin(String email , Integer projectID){
+       Project project  = projectService.requireMemberProject(email,projectID);
+       if(!project.getAdmin().getEmail().equals(email))
+           throw new AccessDeniedException();
+       return project;
+    }
+}
