@@ -50,8 +50,8 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
 
-    @ExceptionHandler(AccessDeniedException.class)
-    public ResponseEntity<Map<String, String>> AccessDenied(AccessDeniedException ex) {
+    @ExceptionHandler(ProjectAccessDeniedException.class)
+    public ResponseEntity<Map<String, String>> AccessDenied(ProjectAccessDeniedException ex) {
         Map<String, String> error = new HashMap<>();
         error.put("message", ex.getMessage());
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
