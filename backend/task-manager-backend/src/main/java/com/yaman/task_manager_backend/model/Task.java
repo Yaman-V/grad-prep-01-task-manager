@@ -11,6 +11,13 @@ import lombok.*;
 @Entity
 @Table(name = "Task")
 public class Task {
+
+    enum Status{
+        OPEN,
+        IN_PROGRESS,
+        CLOSED
+    }
+
     @Id 
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -33,12 +40,12 @@ public class Task {
     )
     private String description;
 
+    @Enumerated(EnumType.STRING)
     @Column (
         name = "status",
-        nullable = false,
-        length = 20
+        nullable = false
     )
-    private String status;
+    private Status status = Status.OPEN;
 
     @Column (
         name = "dueDate",
