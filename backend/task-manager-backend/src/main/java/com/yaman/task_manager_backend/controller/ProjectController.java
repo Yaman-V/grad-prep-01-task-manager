@@ -8,10 +8,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,16 +21,22 @@ public class ProjectController {
         this.projectService = projectService;
     }
 
-    @GetMapping("/projects")
-    public ResponseEntity<List<ProjectResponseDTO>> getMyProjects(@AuthenticationPrincipal AppUserDetails principal) {
-        return ResponseEntity.ok(projectService.getProjectsFor(principal.getUsername()));// principle username is out email
-    }
-
     @PostMapping("/projects")
     public ResponseEntity<ProjectResponseDTO> createProject(
             @Valid @RequestBody ProjectCreateRequestDTO dto,
             @AuthenticationPrincipal AppUserDetails principal) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(projectService.createProject(principal.getUsername(), dto));
+    }
+
+    @GetMapping("/projects")
+    public ResponseEntity<List<ProjectResponseDTO>> getMyProjects(@AuthenticationPrincipal AppUserDetails principal) {
+        return ResponseEntity.ok(projectService.getProjectsFor(principal.getUsername()));// principle username is out email
+    }
+
+    @GetMapping("/projects/{id}")
+    public ResponseEntity<ProjectResponseDTO> getProjectByID(@AuthenticationPrincipal AppUserDetails principal,
+                                                             @PathVariable Integer id){
+        return ResponseEntity.ok(projectService.getProjectByID(principal.getUsername() , id));
     }
 }
