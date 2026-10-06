@@ -2,7 +2,6 @@ package com.yaman.task_manager_backend.service;
 
 import com.yaman.task_manager_backend.dto.ProjectCreateRequestDTO;
 import com.yaman.task_manager_backend.dto.ProjectResponseDTO;
-import com.yaman.task_manager_backend.exception.ProjectNotFoundException;
 import com.yaman.task_manager_backend.mapper.ProjectMapper;
 import com.yaman.task_manager_backend.model.Project;
 import com.yaman.task_manager_backend.model.ProjectMember;
@@ -22,12 +21,14 @@ public class ProjectService {
     private final ProjectMapper mapper;
     private final ProjectRepo projectRepo;
     private final UserRepo userRepo;
+    private final AuthorizationService authorizationService;
 
-    public ProjectService(ProjectMemberRepo projectMemberRepo, ProjectMapper mapper, ProjectRepo projectRepo, UserRepo userRepo) {
+    public ProjectService(ProjectMemberRepo projectMemberRepo, ProjectMapper mapper, ProjectRepo projectRepo, UserRepo userRepo, AuthorizationService authorizationService) {
         this.projectMemberRepo = projectMemberRepo;
         this.mapper = mapper;
         this.projectRepo = projectRepo;
         this.userRepo = userRepo;
+        this.authorizationService = authorizationService;
     }
 
     @Transactional
@@ -55,12 +56,7 @@ public class ProjectService {
     }
 
     public ProjectResponseDTO getProjectByID(String email, Integer projectID) {
-        Project project = requireMemberProject(email, projectID);
+        Project project = authorizationService.requireMemberProject(email, projectID);
         return mapper.toProjectResponseDTO(project);
-    }
-
-    public Project requireMemberProject(String email, Integer projectID) {
-        return projectMemberRepo.findProjectIfMember(projectID, email)
-                .orElseThrow(ProjectNotFoundException::new);   // 404 for missing project and for non-member
     }
 }

@@ -16,4 +16,6 @@ public interface ProjectMemberRepo extends JpaRepository<ProjectMember, Integer>
 
     @Query("select pm.project from ProjectMember pm where pm.project.id = :id and pm.user.email = :email")
     Optional<Project> findProjectIfMember(@Param("id") Integer id, @Param("email") String email);
+
+    List<ProjectMember> findAllByProject_Id(Integer projectID);
 }
