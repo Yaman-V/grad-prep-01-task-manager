@@ -1,7 +1,7 @@
 package com.yaman.task_manager_backend.service;
 
 import com.yaman.task_manager_backend.dto.TaskCreateRequestDTO;
-import com.yaman.task_manager_backend.dto.toTaskResponseDTO;
+import com.yaman.task_manager_backend.dto.TaskResponseDTO;
 import com.yaman.task_manager_backend.exception.ProjectAccessDeniedException;
 import com.yaman.task_manager_backend.mapper.TaskMapper;
 import com.yaman.task_manager_backend.model.Project;
@@ -27,7 +27,7 @@ public class TaskService {
         this.projectService = projectService;
     }
 
-    public toTaskResponseDTO createTask(String email, Integer projectID, TaskCreateRequestDTO requestDTO) {
+    public TaskResponseDTO createTask(String email, Integer projectID, TaskCreateRequestDTO requestDTO) {
         Project project = requireAdmin(email, projectID);
 
         Task task = new Task();
@@ -38,10 +38,10 @@ public class TaskService {
         task.setCreatedAt(LocalDateTime.now());
 
         Task saved = taskRepo.save(task);
-        return mapper.taskResponseDTO(saved);
+        return mapper.toTaskResponseDTO(saved);
     }
 
-    private Project requireAdmin(String email, Integer projectID) {
+    public Project requireAdmin(String email, Integer projectID) {
         Project project = projectService.requireMemberProject(email, projectID);
         if (!project.getAdmin().getEmail().equals(email))
             throw new ProjectAccessDeniedException();
