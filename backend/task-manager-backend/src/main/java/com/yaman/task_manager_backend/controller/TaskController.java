@@ -1,7 +1,7 @@
 package com.yaman.task_manager_backend.controller;
 
 import com.yaman.task_manager_backend.dto.TaskCreateRequestDTO;
-import com.yaman.task_manager_backend.dto.toTaskResponseDTO;
+import com.yaman.task_manager_backend.dto.TaskResponseDTO;
 import com.yaman.task_manager_backend.security.AppUserDetails;
 import com.yaman.task_manager_backend.service.TaskService;
 import jakarta.validation.Valid;
@@ -23,9 +23,9 @@ public class TaskController {
 
 
     @PostMapping("/projects/{projectID}/tasks")
-    public ResponseEntity<toTaskResponseDTO> createTask(@AuthenticationPrincipal AppUserDetails principal,
-                                                        @PathVariable Integer projectID,
-                                                        @Valid @RequestBody TaskCreateRequestDTO dto){
+    public ResponseEntity<TaskResponseDTO> createTask(@AuthenticationPrincipal AppUserDetails principal,
+                                                      @PathVariable Integer projectID,
+                                                      @Valid @RequestBody TaskCreateRequestDTO dto){
     return ResponseEntity.status(HttpStatus.CREATED)
             .body(taskService.createTask(principal.getUsername(), projectID, dto)) ;
     }
