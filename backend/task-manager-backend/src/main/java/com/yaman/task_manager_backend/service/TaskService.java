@@ -9,6 +9,7 @@ import com.yaman.task_manager_backend.repository.TaskRepo;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Service
@@ -37,4 +38,14 @@ public class TaskService {
         Task saved = taskRepo.save(task);
         return mapper.toTaskResponseDTO(saved);
     }
-}
+
+    public List<TaskResponseDTO> getAllTasks(String email, Integer projectID) {
+        authorizationService.requireUser(email);
+        authorizationService.requireMemberProject(email, projectID);
+
+        return taskRepo.findAllByProject_Id(projectID).stream()
+                .map(mapper::toTaskResponseDTO)
+                .toList();
+    }
+
+    }
