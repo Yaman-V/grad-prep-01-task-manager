@@ -12,6 +12,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class MemberService {
@@ -41,5 +42,14 @@ public class MemberService {
         ProjectMember saved = projectMemberRepo.save(pm);
 
         return mapper.toMemberResponseDTO(saved);
+    }
+
+    public List<MemberResponseDTO> getAllMembers(String email, Integer projectID) {
+        authorizationService.requireUser(email);
+        authorizationService.requireMemberProject(email, projectID);
+
+        return projectMemberRepo.findAllByProject_Id(projectID).stream()
+                .map(mapper::toMemberResponseDTO)
+                .toList();
     }
 }

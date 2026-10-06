@@ -6,6 +6,7 @@ import com.yaman.task_manager_backend.mapper.TaskMapper;
 import com.yaman.task_manager_backend.model.Project;
 import com.yaman.task_manager_backend.model.Task;
 import com.yaman.task_manager_backend.repository.TaskRepo;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -25,6 +26,7 @@ public class TaskService {
         this.authorizationService = authorizationService;
     }
 
+    @Transactional
     public TaskResponseDTO createTask(String email, Integer projectID, TaskCreateRequestDTO requestDTO) {
         Project project = authorizationService.requireAdmin(email, projectID);
 
@@ -48,4 +50,4 @@ public class TaskService {
                 .toList();
     }
 
-    }
+}
