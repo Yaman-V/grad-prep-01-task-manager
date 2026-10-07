@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1db4f46-4ac3-42a6-a210-86c32d504320" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/task-manager-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/task-manager-backend/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a1db4f46-4ac3-42a6-a210-86c32d504320" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,7 +140,7 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/sign-up&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;clean-up/files-and-dependencies&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -187,6 +185,8 @@
       <workItem from="1790959734031" duration="125000" />
       <workItem from="1790959938404" duration="1547000" />
       <workItem from="1790961723297" duration="180000" />
+      <workItem from="1791372803767" duration="42000" />
+      <workItem from="1791373426916" duration="51000" />
     </task>
     <servers />
   </component>
