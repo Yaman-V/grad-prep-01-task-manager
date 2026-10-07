@@ -2,20 +2,28 @@
 
 Phase 1 of our university capstone preparation. A full-stack task manager built to establish our core architecture, development workflow, and team collaboration practices.
 
+## Project status
+
+This project is an early draft created to practice development workflows and team collaboration. Core functionality and the UI are in place, but gaps, bugs, and planned features remain.
+
+The main goal is learning—not delivering a production-ready application.
+
 ## Structure
 
 This project has:
 
 ```text
 grad-prep-01-task-manager/
-├── frontend/        # React application
-├── backend/         # Spring Boot application
+├── frontend/
+│   └── task-manager-frontend/  # React appli-cation
+├── backend/
+│   └── task-manager-backend/  # Spring Boot application
 ├── .gitignore
 └── README.md
 ```
 
-- `/frontend` contains the React frontend.
-- `/backend` contains the Spring Boot backend.
+- `/frontend/task-manager-frontend` contains the React frontend.
+- `/backend/task-manager-backend` contains the Spring Boot backend.
 - Configuration files such as `.gitignore` and `.env.example` are kept in the project where needed.
 
 > Do not commit secrets or sensitive information to `.env` files. Use `.env.example` to document required environment variables.
@@ -67,35 +75,57 @@ docs/update-readme
 
 ## How to build and run locally
 
+### Prerequisites
+
+- Java 25
+- Node.js and npm
+- A PostgreSQL database accessible to the backend
+
+The backend's PostgreSQL connection must be configured with valid credentials before starting it. Keep credentials out of committed files.
+
 ### Backend
 
-1. Make sure your local branch is up to date:
+1. From the repository root, go to the backend project directory:
 
-```bash
-git pull
+```powershell
+cd backend\task-manager-backend
 ```
 
-2. Go to the backend directory:
+2. Build the Spring Boot project:
 
-```bash
-cd backend
-```
-
-3. Build the Spring Boot project:
-
-```bash
+```powershell
 .\mvnw.cmd clean package
 ```
 
-4. Run the Spring Boot application:
+3. Run the Spring Boot application:
 
-```bash
+```powershell
 .\mvnw.cmd spring-boot:run
 ```
 
+The backend starts at `http://localhost:8080`. Keep this terminal open while using the frontend.
+
 ### Frontend
 
-_Not available yet._
+1. Open a second terminal from the repository root and go to the frontend project directory:
+
+```powershell
+cd frontend\task-manager-frontend
+```
+
+2. Install the dependencies:
+
+```powershell
+npm ci
+```
+
+3. Start the Vite development server:
+
+```powershell
+npm run dev
+```
+
+Open the URL printed by Vite (by default, `http://localhost:5173`). The frontend expects the backend to be running at `http://localhost:8080`.
 
 ---
 
