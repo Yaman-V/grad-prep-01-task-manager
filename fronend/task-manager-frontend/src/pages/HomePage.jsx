@@ -132,7 +132,7 @@ function HomePage() {
                         aria-label="Go to TaskFlow home"
                     >
                         <img
-                            src="image.png"
+                            src="/image.png"
                             alt="TaskFlow logo"
                             width="44"
                             height="44"
