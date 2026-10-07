@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; 
 
 function Signin() {
   const [formData, setFormData] = useState({
@@ -35,8 +35,10 @@ function Signin() {
 
       console.log("Signed in:", data);
 
-      // Go to your task manager after successful login
-      navigate("/tasks");
+      localStorage.setItem("username", data.username);
+      localStorage.setItem("email", data.email);
+
+      navigate("/HomePage");
 
     } catch (error) {
       setError(error.message);
