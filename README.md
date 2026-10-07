@@ -14,7 +14,7 @@ This project has:
 
 ```text
 grad-prep-01-task-manager/
-├── fronend/
+├── frontend/
 │   └── task-manager-frontend/  # React appli-cation
 ├── backend/
 │   └── task-manager-backend/  # Spring Boot application
@@ -22,7 +22,7 @@ grad-prep-01-task-manager/
 └── README.md
 ```
 
-- `/fronend/task-manager-frontend` contains the React frontend.
+- `/frontend/task-manager-frontend` contains the React frontend.
 - `/backend/task-manager-backend` contains the Spring Boot backend.
 - Configuration files such as `.gitignore` and `.env.example` are kept in the project where needed.
 
@@ -110,7 +110,7 @@ The backend starts at `http://localhost:8080`. Keep this terminal open while usi
 1. Open a second terminal from the repository root and go to the frontend project directory:
 
 ```powershell
-cd fronend\task-manager-frontend
+cd frontend\task-manager-frontend
 ```
 
 2. Install the dependencies:
