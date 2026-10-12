@@ -29,15 +29,30 @@ function Signup() {
         throw new Error("Signup failed");
       }
 
-      const data = await response.json();
+      const signinResponse = await fetch("http://localhost:8080/users/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password
+        })
+      });
 
-      console.log("User created:", data);
+      if (!signinResponse.ok) {
+        throw new Error("Account created, but sign-in failed. Please sign in.");
+      }
 
+      const user = await signinResponse.json();
+      localStorage.setItem("username", user.username);
+      localStorage.setItem("email", user.email);
+      navigate("/HomePage");
     } catch (error) {
       setError(error.message);
       console.error(error);
     }
-    navigate("/signin");
   };
 
   return (
@@ -120,4 +135,3 @@ function Signup() {
 }
 
 export default Signup;
-
